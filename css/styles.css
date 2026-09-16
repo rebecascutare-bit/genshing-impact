@@ -1,0 +1,551 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #080d1c;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ================= MENU ================= */
+
+.cabecalho {
+    width: 100%;
+    padding: 20px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    background: rgba(7, 12, 28, 0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.logo {
+    font-family: 'Cinzel', serif;
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: #9bdcff;
+    font-size: 12px;
+    display: block;
+    letter-spacing: 5px;
+    text-align: center;
+}
+
+.menu {
+    display: flex;
+    gap: 30px;
+}
+
+.menu a {
+    color: #dbe5f5;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: #8edcff;
+}
+
+button,
+a {
+    cursor: pointer;
+}
+
+.botao-menu,
+.botao-principal,
+.botao-secundario {
+    padding: 13px 24px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.botao-menu,
+.botao-principal {
+    background: linear-gradient(135deg, #55bce8, #8069d9);
+    color: white;
+    border: none;
+    font-weight: 600;
+}
+
+.botao-menu:hover,
+.botao-principal:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(80, 180, 240, 0.3);
+}
+
+.botao-secundario {
+    border: 1px solid #76c9ed;
+    color: #bdeaff;
+}
+
+/* ================= BANNER ================= */
+
+.hero {
+    min-height: 100vh;
+    padding: 150px 8% 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    overflow: hidden;
+
+    background:
+        linear-gradient(90deg, #080d1c 20%, rgba(8, 13, 28, 0.85), rgba(8, 13, 28, 0.2)),
+        url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=80');
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-conteudo {
+    max-width: 600px;
+    position: relative;
+    z-index: 2;
+}
+
+.subtitulo {
+    color: #83d7f7;
+    font-size: 12px;
+    letter-spacing: 4px;
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(45px, 6vw, 80px);
+    line-height: 1.15;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: #9cdbff;
+    text-shadow: 0 0 30px rgba(90, 200, 255, 0.3);
+}
+
+.descricao {
+    color: #b4bfd5;
+    line-height: 1.9;
+    max-width: 480px;
+    margin-bottom: 35px;
+}
+
+.botoes {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* IMAGEM PRINCIPAL */
+
+.hero-personagem {
+    position: relative;
+    width: 430px;
+    height: 430px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.hero-personagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 50%;
+    border: 1px solid rgba(160, 220, 255, 0.5);
+    box-shadow: 0 0 80px rgba(65, 160, 255, 0.25);
+    opacity: 0.85;
+}
+
+.circulo-brilho {
+    position: absolute;
+    width: 460px;
+    height: 460px;
+    border: 1px solid rgba(120, 210, 255, 0.3);
+    border-radius: 50%;
+    animation: girar 20s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes girar {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ================= FRASE ================= */
+
+.frase {
+    text-align: center;
+    padding: 45px 20px;
+    background: #0d1428;
+    color: #9aa9c5;
+    font-family: 'Cinzel', serif;
+    font-size: 18px;
+    font-style: italic;
+}
+
+/* ================= SEÇÕES ================= */
+
+.secao {
+    padding: 110px 8%;
+}
+
+.titulo-secao {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.titulo-secao h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.titulo-secao > p:last-child {
+    color: #8795af;
+    font-size: 14px;
+}
+
+/* ================= PERSONAGENS ================= */
+
+.personagens-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.personagem {
+    background: #111a31;
+    border: 1px solid rgba(150, 190, 230, 0.12);
+    transition: 0.4s;
+    overflow: hidden;
+}
+
+.personagem:hover {
+    transform: translateY(-10px);
+    border-color: #72c8ed;
+    box-shadow: 0 15px 35px rgba(40, 130, 200, 0.15);
+}
+
+/* A IMAGEM FICA DENTRO DA CAIXA */
+
+.imagem-personagem {
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    background: #111a31;
+}
+
+.imagem-personagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    transition: 0.5s;
+}
+
+.personagem:hover .imagem-personagem img {
+    transform: scale(1.08);
+}
+
+.elemento {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    background: rgba(0, 0, 0, 0.5);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-personagem {
+    padding: 20px;
+}
+
+.info-personagem p {
+    color: #72c8ed;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.info-personagem h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 22px;
+    margin: 8px 0;
+}
+
+.info-personagem span {
+    color: #8290a9;
+    font-size: 12px;
+}
+
+/* ================= REGIÕES ================= */
+
+.regioes {
+    background: #0b1225;
+}
+
+.regioes-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.regiao {
+    height: 330px;
+    position: relative;
+    overflow: hidden;
+    transition: 0.4s;
+    background: #111a31;
+}
+
+.regiao:hover {
+    transform: scale(1.03);
+}
+
+.regiao img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: 0.5s;
+}
+
+.regiao:hover img {
+    transform: scale(1.08);
+}
+
+.regiao::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        transparent 20%,
+        rgba(4, 8, 20, 0.95)
+    );
+    z-index: 1;
+}
+
+.regiao-overlay {
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+    z-index: 2;
+}
+
+.regiao-overlay span {
+    font-size: 28px;
+}
+
+.regiao-overlay h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 25px;
+    margin: 10px 0 5px;
+}
+
+.regiao-overlay p {
+    color: #b5c3d9;
+    font-size: 12px;
+}
+
+/* ================= ELEMENTOS ================= */
+
+.elementos-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 15px;
+}
+
+.elemento-card {
+    text-align: center;
+    padding: 25px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: #111a31;
+    transition: 0.3s;
+}
+
+.elemento-card:hover {
+    transform: translateY(-7px);
+    background: #1b2946;
+}
+
+.elemento-card span {
+    font-size: 32px;
+}
+
+.elemento-card h3 {
+    margin-top: 12px;
+    font-family: 'Cinzel', serif;
+    font-size: 15px;
+}
+
+.elemento-card p {
+    color: #7f8da7;
+    font-size: 11px;
+    margin-top: 5px;
+}
+
+/* ================= CTA ================= */
+
+.cta {
+    margin: 30px 8% 100px;
+    padding: 60px;
+    background: linear-gradient(120deg, #17294a, #17203d);
+    border: 1px solid rgba(120, 200, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.cta h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.cta p:last-child {
+    color: #8f9eb8;
+    font-size: 13px;
+}
+
+/* ================= RODAPÉ ================= */
+
+.rodape {
+    padding: 50px 8%;
+    background: #060a15;
+    text-align: center;
+    color: #66748e;
+}
+
+.rodape .logo {
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.rodape p {
+    font-size: 12px;
+}
+
+.copyright {
+    margin-top: 25px;
+    color: #3f4c65 !important;
+}
+
+/* ================= RESPONSIVO ================= */
+
+@media (max-width: 1000px) {
+
+    .menu {
+        gap: 15px;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .hero-conteudo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .personagens-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .regioes-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .elementos-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .cta {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 650px) {
+
+    .cabecalho {
+        padding: 18px 5%;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .botao-menu {
+        padding: 10px 14px;
+        font-size: 11px;
+    }
+
+    .hero {
+        padding: 130px 6% 70px;
+    }
+
+    .hero-personagem {
+        width: 280px;
+        height: 280px;
+    }
+
+    .circulo-brilho {
+        width: 300px;
+        height: 300px;
+    }
+
+    .titulo-secao h2 {
+        font-size: 28px;
+    }
+
+    .personagens-grid,
+    .regioes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .elementos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cta {
+        margin: 20px 5% 70px;
+        padding: 35px 20px;
+    }
+
+    .cta h2 {
+        font-size: 25px;
+    }
+}
